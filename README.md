@@ -6,7 +6,7 @@ FUNCIONALIDADES:
 <br>• Conecta em várias contas do Telegram(Tratando errors de FloodError, FloodWaitError, PhoneNumberBannedError)
 <br>• Extrai Membros de grupo do Telegra por completo e em ordem alfabetica de A...Z(consegue extrair de 70% a 98% dos membros)
 <br>• Adiciona Membros de forma 100% automática no seu grupo do Telegram(Tratando errors de FloodError, FloodWaitError, PeerFloodError, UserPrivacyRestrictedError...)
-<br>• [EM DESENVOLVIMENTO] Sistema Anti-Spam, Bot aguarda de 60/180s para adicionar cada membro, e adiciona apenas 20 membros por vez e troca de conta, depois de adicionar 20 membros com cada conta, ele aguarda algumas horas e repete todo o processo...(OBS: Você pode moficiar as configurações do Sistema Anti-Spam)
+<br>• Sistema Anti-Spam, Bot aguarda de 60/180s para adicionar cada membro, e adiciona apenas 20 membros por vez e troca de conta, depois de adicionar 20 membros com cada conta, ele aguarda algumas horas e repete todo o processo...(OBS: Você pode moficiar as configurações do Sistema Anti-Spam)
 
 
 
@@ -39,6 +39,26 @@ EXEMPLO:
     },
     ...
   }
+}
+```
+
+nas configurações do <code>"Sitema Anti-Spam"</code> você pode alterar e personalizar o tempo estre os requests como você quiser quiser para evitar bloqueios:
+<br>• <code>"aguardar(segundos) a cada adicao de membro"</code>
+<br>• <code>"aguardar(segundos) por peerflooderror"</code> 
+<br>• <code>"limide de adicao de membros por conta"</code> 
+<br>• <code>"periodo de horas(em segundos) que contas ira hibernar após atingir limites de adicao de membros"</code> 
+
+EXEMPLO PADRÃO DO ANTI-SPAM:
+```bash
+{
+  ...
+  "Sistema Anti-Spam": {
+        "aguardar(segundos) a cada adicao de membro": [60, 180], 
+        "aguardar(segundos) por peerflooderror": [100, 1000], 
+        "limide de adicao de membros por conta": 20, 
+        "periodo de horas(em segundos) que contas ira hibernar após atingir limites de adicao de membros": 28800
+   },
+   ...
 }
 ```
 
